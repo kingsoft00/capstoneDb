@@ -9,7 +9,7 @@ var ProductSchemaRef = new ProductSchema({
     size:String,
     color:String,
     image:String,
-    forType:String,
+    gender:String,
     price:Number,
     brand: {type: ProductSchema.Types.ObjectId, ref: 'Brand'}
 });

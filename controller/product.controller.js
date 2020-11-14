@@ -37,7 +37,7 @@ var StoreProductInfo =(req,res)=>{ //{_id:106,pname:"Computer",price:2000"}
         size:req.body.size,
         color:req.body.color,
         image:req.body.image,
-        forType:req.body.forType,
+        gender:req.body.gender,
         price:req.body.price,
         brand:req.body.brand
     });
