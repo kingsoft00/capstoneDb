@@ -11,7 +11,7 @@ var GetProductFromDb = (req,res)=>{
     
         })
 }
-var GetProductByGender = (req,res)=>{ //productInfoById/100 or another id number
+var GetProductByGender = (req,res)=>{ 
     var genderInfor = req.params.gender;
     ProductModel.find({gender:genderInfor},(err,data)=>{
         if(err) throw err;
@@ -20,9 +20,11 @@ var GetProductByGender = (req,res)=>{ //productInfoById/100 or another id number
     
         })
 }
-var GetProductByBrand = (req,res)=>{ //productInfoById/100 or another id number
+//db.Product.find({$and:[{gender:"Men"},{price:15.6}]})
+var GetProductByBrand = (req,res)=>{ 
     var brandInfor = req.params.brand;
-    ProductModel.find({brand:brandInfor},(err,data)=>{
+    var genderInfor = req.params.gender;
+    ProductModel.find({$and:[{brand:brandInfor},{gender:genderInfor}]},(err,data)=>{
         if(err) throw err;
             
             res.json(data);
@@ -30,7 +32,7 @@ var GetProductByBrand = (req,res)=>{ //productInfoById/100 or another id number
         })
 }
 
-var StoreProductInfo =(req,res)=>{ //{_id:106,pname:"Computer",price:2000"}
+var StoreProductInfo =(req,res)=>{
     let product = new ProductModel({
         _id:req.body._id,
         name:req.body.name,
