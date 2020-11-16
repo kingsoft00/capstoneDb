@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({extended:true}));   //Enable post, put and delete
 app.use(bodyParser.json()); //converting json req data. post method  
 //app.use(cors()); //Enable CORS feature
 let corsOptions = {
-    origin: 'http://localhost:4200', //to allow server connect with 4200, we can add more http behind after ',
+    origin: 'http://localhost:4300', //to allow server connect with 4200, we can add more http behind after ',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
   
